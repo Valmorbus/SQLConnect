@@ -57,6 +57,12 @@ public class Elev {
 		return "Elev " + fornamn + " " + efternamn;
 	}
 	
+	public String printStudent() {
+		return "Personnummer: " + personnummer + "\nfornamn: " + fornamn + "\nefternamn: " + efternamn + "\nepost: "
+				+ epost + "\ntelefon: " + telefon + "\nklasskod: " + klasskod;
+	}
+	
+	
 	
 
 }

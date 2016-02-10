@@ -15,8 +15,6 @@ import javafx.scene.control.ChoiceDialog;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-import lektion2.Elev;
-import lektion2.Klass;
 
 public class GetStudentInfo extends Application {
 
@@ -38,16 +36,15 @@ public class GetStudentInfo extends Application {
 		
 		getStudentDataFromDB();
 		ChoiceDialog<Elev> dialog = new ChoiceDialog<Elev>(elevLista.get(0), elevLista);
-		dialog.setTitle("Välj klass");
-		dialog.setHeaderText("Välj en klass");
-		dialog.setContentText("Klass:");
+		dialog.setTitle("Välj Elev");
+		dialog.setHeaderText("Välj en Elev");
+		dialog.setContentText("Elev:");
 
 		Optional<Elev> result = dialog.showAndWait();
 
 		if (result.isPresent()) {
-			System.out.println(result.get().toString());
 			Klass k = getKlass(result);
-			ta.setText(result.get().toString() + " " +k);
+			ta.setText(result.get().printStudent() + "\n" +k);
 			
 			
 		}

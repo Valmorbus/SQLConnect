@@ -39,7 +39,7 @@ public class Klass {
 
 	@Override
 	public String toString() {
-		return "Klassnamn " + namn + ", arskurs " + arskurs ;
+		return "Klassnamn " + namn + ", årskurs " + arskurs ;
 	}
 	
 
