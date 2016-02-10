@@ -29,6 +29,13 @@ public class GetStudentInfo extends Application {
 
 	@Override
 	public void start(Stage primaryStage) {
+		Pane pane = new Pane();
+		Scene scene = new Scene(pane);
+		TextArea ta = new TextArea();
+		pane.getChildren().add(ta);
+		primaryStage.setScene(scene);
+		primaryStage.show();
+		
 		getStudentDataFromDB();
 		ChoiceDialog<Elev> dialog = new ChoiceDialog<Elev>(elevLista.get(0), elevLista);
 		dialog.setTitle("Välj klass");
@@ -40,13 +47,7 @@ public class GetStudentInfo extends Application {
 		if (result.isPresent()) {
 			System.out.println(result.get().toString());
 			Klass k = getKlass(result);
-			Pane pane = new Pane();
-			Scene scene = new Scene(pane);
-			TextArea ta = new TextArea();
-			pane.getChildren().add(ta);
 			ta.setText(result.get().toString() + " " +k);
-			primaryStage.setScene(scene);
-			primaryStage.show();
 			
 			
 		}
